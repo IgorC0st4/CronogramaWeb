@@ -10,21 +10,40 @@
 
 	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="../js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var materias = [];
+			var nome;
+			$("#fab_add").click(function(){
+				nome = $("#nome_materia").val();
+				$("#materias_cadastradas").append('<li class="collection-item"><div>' + nome + '<a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>');
+			});
+		});
+	</script>
 </head>
 
 <body>
 	<div class="container">
 		<div class="row">
-			
-
-			<div id="materias_cadastradas" class="col s6">
-				<ul class="collection with-header">
-					<li class="collection-header"><h4>Matérias cadastradas</h4></li>
-					<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
-					<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
-					<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
-					<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
-				</ul>
+			<div class="container">
+				<div class="row">
+					
+					<div class="input-field col s10">
+						<input id="nome_materia" type="text" class="validate">
+						<label for="num_dias">Nome da matéria</label>
+					</div>
+					<div class="input-field col s2">
+						<div class="valign-wrapper">
+							<a class="btn-floating btn-large waves-effect waves-light red" id="fab_add"><i class="material-icons">add</i></a>
+						</div>
+					</div>
+				</div>
+				<div>
+					<ul class="collection with-header" id="materias_cadastradas">
+						<li class="collection-header"><h4>Matérias cadastradas</h4></li>
+						<li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
