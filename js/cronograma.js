@@ -23,8 +23,6 @@ Listar();
 
 
 function Listar(){
-	console.log(tbCronograma);
-	console.log(tbMaterias);
 	var i, j;
 
 
@@ -36,19 +34,18 @@ function Listar(){
 	$("#tbl_cronograma_head").append(strAppendHead);
 
 
-
 	var strAppendBody = "";
 	for (i = 0; i < tbCronograma.nMaterias; i++) {
 		strAppendBody = strAppendBody + "<tr>" ;
 		for(j = 0; j < tbCronograma.nDias; j++){
-			var mat = JSON.parse(tbMaterias.dias[j][i]);
 			strAppendBody = strAppendBody + "<td>";
-			strAppendBody = strAppendBody + mat.Nome;
+			strAppendBody = strAppendBody + tbCronograma.dias[j][i];
 			strAppendBody = strAppendBody +"</td>";
 		}
 		strAppendBody = strAppendBody + "</tr>";
 	}
 	$("#tbl_cronograma_body").append(strAppendBody);
+
 	return;
 }
 
@@ -67,13 +64,14 @@ function GerarCronograma(){
 		var dia = [];
 		for (j = 0; j < numMaterias; j++) {
 			if (tbMaterias.length < numMaterias) {
-				dia.push(tbMaterias[getRandom(tbMaterias.length)]);
+				var mat = JSON.parse(tbMaterias[getRandom(tbMaterias.length)]);
+				dia.push(mat.Nome);
 			}else{
-				var mat = tbMaterias[getRandom(tbMaterias.length)];
-				if (dia.includes(mat)) 
+				var mat = JSON.parse(tbMaterias[getRandom(tbMaterias.length)]);
+				if (dia.includes(mat.Nome)) 
 					j--;
 				else{
-					dia.push(mat);
+					dia.push(mat.Nome);
 				}
 			}
 		}
