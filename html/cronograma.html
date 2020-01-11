@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cronograma</title>
+
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1"/>      
+	<link rel = "stylesheet"
+	href = "https://fonts.googleapis.com/icon?family=Material+Icons"/>
+	<link rel="stylesheet" type="text/css" href="../css/materialize.min.css"/>
+
+	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="../js/materialize.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<form class="col s12">
+				<div class="input-field col s4">
+					<input id="num_dias" type="number" class="validate" min="1" max="7">
+					<label for="num_dias">Número de dias</label>
+				</div>
+				<div class="input-field col s4">
+					<input id="num_materias" type="number" class="validate" min="1" max="10">
+					<label for="num_materias">Matérias por dia</label>
+				</div>
+				<div class="input-field col s4">
+					<div class="valign-wrapper">
+						<button class="btn waves-effect waves-light center-align" type="submit" name="action">Salvar
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+
+
+		<table class="centered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Item Name</th>
+					<th>Item Price</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>Alvin</td>
+					<td>Eclair</td>
+					<td>$0.87</td>
+				</tr>
+				<tr>
+					<td>Alan</td>
+					<td>Jellybean</td>
+					<td>$3.76</td>
+				</tr>
+				<tr>
+					<td>Jonathan</td>
+					<td>Lollipop</td>
+					<td>$7.00</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
