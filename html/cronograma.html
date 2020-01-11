@@ -10,6 +10,7 @@
 
 	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="../js/materialize.min.js"></script>
+	<script type="text/javascript" src="../js/cronograma.js"></script>
 </head>
 
 <body>
@@ -26,25 +27,30 @@
 				</div>
 				<div class="input-field col s2">
 					<div class="valign-wrapper">
-						  <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">save</i></a>
-
+						  <a class="btn-floating btn-large waves-effect waves-light red" id="fab_salvar"><i class="material-icons">save</i></a>
 					</div>
 				</div>
 			</form>
 		</div>
+		<table class="centered" id="tbl_cronograma">
+			<thead id="tbl_cronograma_head">
+			</thead>
+			<tbody id="tbl_cronograma_body">
+			</tbody>
+		</table>
 
 
-
-		<table class="centered">
-			<thead>
-				<tr>
+<!--
+		<table class="centered" id="tbl_cronograma">
+			<thead id="tbl_cronograma_head">
+				<tr >
 					<th>Name</th>
 					<th>Item Name</th>
 					<th>Item Price</th>
 				</tr>
 			</thead>
 
-			<tbody>
+			<tbody id="tbl_cronograma_body">
 				<tr>
 					<td>Alvin</td>
 					<td>Eclair</td>
@@ -62,6 +68,7 @@
 				</tr>
 			</tbody>
 		</table>
+	-->
 	</div>
 </body>
 </html>
