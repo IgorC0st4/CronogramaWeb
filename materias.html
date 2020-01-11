@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Matérias</title>
+
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1"/>      
+	<link rel = "stylesheet"
+	href = "https://fonts.googleapis.com/icon?family=Material+Icons"/>
+	<link rel="stylesheet" type="text/css" href="../css/materialize.min.css"/>
+
+	<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="../js/materialize.min.js"></script>
+	<script type="text/javascript" src="../js/materias.js"></script>
+	
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="container">
+				<form id="frm_add_materia">
+					<div class="row">
+					
+					<div class="input-field col s10">
+						<input id="nome_materia" type="text" class="validate">
+						<label for="nome_materia">Nome da matéria</label>
+					</div>
+					<div class="input-field col s2">
+						<div class="valign-wrapper">
+							<a class="btn-floating btn-large waves-effect waves-light red" id="fab_add"><i class="material-icons">add</i></a>
+						</div>
+					</div>
+				</div>
+				</form>
+				<div>
+					<ul class="collection with-header" id="materias_cadastradas">
+						<li class="collection-header"><h4>Matérias cadastradas</h4></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
