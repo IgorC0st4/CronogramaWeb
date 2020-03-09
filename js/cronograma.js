@@ -38,7 +38,7 @@ function Listar(){
 	for (i = 0; i < tbCronograma.nMaterias; i++) {
 		strAppendBody = strAppendBody + "<tr>" ;
 		for(j = 0; j < tbCronograma.nDias; j++){
-			strAppendBody = strAppendBody + "<td>";
+			strAppendBody = strAppendBody + "<td class='droptarget' ondrop='drop(event)' ondragover='allowDrop(event)'>";
 			strAppendBody = strAppendBody + tbCronograma.dias[j][i];
 			strAppendBody = strAppendBody +"</td>";
 		}
@@ -88,7 +88,12 @@ function getRandom(max) {
 }
 
 $("#fab_salvar").on('click', function() {
-	GerarCronograma();
+	if ($("#num_dias").val()==="" || $("#num_dias").val()==="") {
+		if (confirm("Número de dias ou de matérias igual a zero! Apagar cronograma?"))
+			GerarCronograma();
+	}else{
+		GerarCronograma();
+	}
 });
 
 });

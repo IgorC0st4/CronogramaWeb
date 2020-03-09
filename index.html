@@ -3,13 +3,14 @@
 <head>
 	<title>Cronograma de estudos</title>
 
-	<meta name = "viewport" content = "width = device-width, initial-scale = 1"></meta>      
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1"></meta>
+
 	<!-- Materialize local-->
 	<link rel = "stylesheet"
 	href = "https://fonts.googleapis.com/icon?family=Material+Icons"></link>
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css"></link>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
-	
+
 	<!-- Materialize online-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -20,19 +21,10 @@
 	<!-- jQuery local -->
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 
-
 	<link rel="stylesheet" type="text/css" href="css/index.css"></link>
-
-	<script>
-		$(document).ready(function(){
-			$("#materias").click(function(){
-				$("#iframe").prop("src", "materias.html");
-			});
-			$("#cronograma").click(function(){
-				$("#iframe").prop("src", "cronograma.html");
-			});
-		});
-	</script>
+	<script type="text/javascript" src="js/cronograma.js"></script>
+	<script type="text/javascript" src="js/materias.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </head>
 
 <body>
@@ -44,19 +36,60 @@
 		</nav>
 	</header>
 
+	<div class="container">
+		
+		<div class="row">
+		
+			<div id="tab_cronograma" class="col s6">
+				<div class="row">
+					<form class="col s12">
+						<div class="input-field col s5">	
+							<input id="num_dias" type="number" class="validate" min="1" max="7">
+							<label for="num_dias">Número de dias</label>
+						</div>
+						<div class="input-field col s5">
+							<input id="num_materias" type="number" class="validate" min="1" max="10">
+							<label for="num_materias">Matérias por dia</label>
+						</div>
+						<div class="input-field col s2">
+							<div class="valign-wrapper">
+								  <a class="btn-floating btn waves-effect waves-light red" id="fab_salvar"><i class="material-icons">save</i></a>
+							</div>
+						</div>
+					</form>
+				</div>
+				<table class="centered" id="tbl_cronograma">
+					<thead id="tbl_cronograma_head">
+					</thead>
+					<tbody id="tbl_cronograma_body">
+					</tbody>
+				</table>
+			</div>		
 
-	<div class = "row">
-		<div class = "s12">
-			<ul class = "tabs blue lighten-5">
-				<li class = "tab col s6" id="cronograma"><a href="#">Crononograma</a></li>
-				<li class = "tab col s6" id="materias"><a href="#">Matérias</a></li>
-			</ul>
+			<div id="tab_materias" class="col s6">
+				<div class="row">
+					<div class="container">
+						<form id="frm_add_materia">
+							<div class="row">
+								<div class="input-field col s10">
+									<input id="nome_materia" type="text" class="validate">
+									<label for="nome_materia">Nome da matéria</label>
+								</div>
+								<div class="input-field col s2">
+									<div class="valign-wrapper">
+										<a class="btn-floating btn waves-effect waves-light red" id="fab_add"><i class="material-icons">add</i></a>
+									</div>
+								</div>
+							</div>
+						</form>
+					<div>
+						<ul class="collection with-header" id="materias_cadastradas">
+							<li class="collection-header"><h4>Matérias cadastradas</h4></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
-
-	</div> 
-
-	<iframe src="cronograma.html" id="iframe"/>
-
-	
+	</div>
 </body>
 </html>

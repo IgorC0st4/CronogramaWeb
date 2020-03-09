@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cronograma</title>
+
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1"></meta>      
+	<!-- Materialize local-->
+	<link rel = "stylesheet"
+	href = "https://fonts.googleapis.com/icon?family=Material+Icons"></link>
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css"></link>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	
+	<!-- Materialize online-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<!-- jQuery online -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	<!-- jQuery local -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
+	<!-- JS to PDF -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/jspdf" type="text/javascript"></script>
+	<script src=" https://unpkg.com/jspdf-autotable" type="text/javascript"></script>
+
+	<script type="text/javascript" src="js/cronograma_manual.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<form class="col s12">
+				<div class="input-field col s5">
+					<input id="num_dias" type="number" class="validate" min="1" max="7">
+					<label for="num_dias">Número de dias</label>
+				</div>
+				<div class="input-field col s5">
+					<input id="num_materias" type="number" class="validate" min="1" max="10">
+					<label for="num_materias">Matérias por dia</label>
+				</div>
+				<div class="input-field col s2">
+					<div class="valign-wrapper">
+						  <a class="btn-floating btn-large waves-effect waves-light red" id="fab_salvar"><i class="material-icons">save</i></a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<table class="centered" id="tbl_cronograma">
+			<thead id="tbl_cronograma_head">
+				<th>Domingo</th>
+				<th>Segunda</th>
+				<th>Terça</th>
+				<th>Quarta</th>
+				<th>Quinta</th>
+				<th>Sexta</th>
+				<th>Sábado</th>
+			</thead>
+			<tbody id="tbl_cronograma_body">
+				<tr>
+					<td>Sociologia</td>
+					<td>8:00-11:00 Química 2</td>
+					<td>8:00-11:15 Aula de Física</td>
+					<td>8:00-10:00 Química 1</td>
+					<td>8:00-11:00 Aula de Português (redação)</td>
+					<td>8:00-11:00 Aula de matemática</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Filosofia</td>
+					<td>11:00-12:00 História</td>
+					<td>14:00-18:00 Aula de Português</td>
+					<td>10:00-12:00 História</td>
+					<td>13:00-14:30 Fazer redação</td>
+					<td>13:00-15:30 Química 1</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Geografia</td>
+					<td>13:00-14:30 Matemática Básica</td>
+					<td>20:30-00:15 Biologia + revisão do assunto do dia</td>
+					<td>13:00-15:00 Matemática Básica</td>
+					<td>14:30-16:00 Português (gramática)</td>
+					<td>15:30-18:00 Química 2</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>14:30-19:00 Física 1</td>
+					<td>OBS: fazer redação</td>
+					<td>15:00-18:00 Matemática</td>
+					<td>16:00-19:30 Química 2</td>
+					<td>18:00-20:00 Biologia</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>20:00-23:00 Química 2</td>
+					<td></td>
+					<td>18:00-20:00 História</td>
+					<td>20:30-21:30 Matemática básica</td>
+					<td>21:00-00:00 Biologia + Matemática básica</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>22:00-00:00 Literatura</td>
+					<td>21:30-00:00 Matemática</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+<!--
+		<table class="centered" id="tbl_cronograma">
+			<thead id="tbl_cronograma_head">
+				<tr >
+					<th>Name</th>
+					<th>Item Name</th>
+					<th>Item Price</th>
+				</tr>
+			</thead>
+
+			<tbody id="tbl_cronograma_body">
+				<tr>
+					<td>Alvin</td>
+					<td>Eclair</td>
+					<td>$0.87</td>
+				</tr>
+				<tr>
+					<td>Alan</td>
+					<td>Jellybean</td>
+					<td>$3.76</td>
+				</tr>
+				<tr>
+					<td>Jonathan</td>
+					<td>Lollipop</td>
+					<td>$7.00</td>
+				</tr>
+			</tbody>
+		</table>
+	-->
+	</div>
+</body>
+</html>
