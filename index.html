@@ -5,6 +5,12 @@
 
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1"></meta>
 
+	<!-- jQuery online -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	<!-- jQuery local -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
 	<!-- Materialize local-->
 	<link rel = "stylesheet"
 	href = "https://fonts.googleapis.com/icon?family=Material+Icons"></link>
@@ -15,16 +21,12 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-	<!-- jQuery online -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	
-	<!-- jQuery local -->
-	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-
 	<link rel="stylesheet" type="text/css" href="css/index.css"></link>
 	<script type="text/javascript" src="js/cronograma.js"></script>
 	<script type="text/javascript" src="js/materias.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+
+	
 </head>
 
 <body>
@@ -43,17 +45,22 @@
 			<div id="tab_cronograma" class="col s6">
 				<div class="row">
 					<form class="col s12">
-						<div class="input-field col s5">	
+						<div class="input-field col s4">	
 							<input id="num_dias" type="number" class="validate" min="1" max="7">
 							<label for="num_dias">Número de dias</label>
 						</div>
-						<div class="input-field col s5">
+						<div class="input-field col s4">
 							<input id="num_materias" type="number" class="validate" min="1" max="10">
 							<label for="num_materias">Matérias por dia</label>
 						</div>
 						<div class="input-field col s2">
 							<div class="valign-wrapper">
-								  <a class="btn-floating btn waves-effect waves-light red" id="fab_salvar"><i class="material-icons">save</i></a>
+								  <a class="btn-floating btn waves-effect waves-light red tooltipped" id="fab_salvar" data-position="bottom" data-tooltip="Cronograma em branco"><i class="material-icons">save</i></a>
+							</div>
+						</div>
+						<div class="input-field col s2">
+							<div class="valign-wrapper">
+								  <a class="btn-floating btn waves-effect waves-light red tooltipped" id="fab_gerar" data-position="bottom" data-tooltip="Cronograma aleatório"><i class="material-icons">shuffle</i></a>
 							</div>
 						</div>
 					</form>
@@ -91,5 +98,9 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		M.AutoInit();
+	</script>
 </body>
 </html>

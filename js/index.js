@@ -1,20 +1,19 @@
-$(function(){
-	function dragStart(event) {
-		event.dataTransfer.setData("Text", event.target.id);
-	}
+function allowDrop(ev) {
+	ev.preventDefault();
+  	ev.dataTransfer.dropEffect = "copy";
+}
 
-	function dragging(event) {
-		//document.getElementById("demo").innerHTML = "The p element is being dragged";
-	}
+function drag(ev) {
+	ev.dataTransfer.setData("text/plain", ev.target.id);
+ 	ev.dataTransfer.dropEffect = "copy";
+}
 
-	function allowDrop(event) {
-		event.preventDefault();
-	}
+function drop(ev) {
+	ev.preventDefault();
+	var data = ev.dataTransfer.getData("text/plain");
 
-	function drop(event) {
-		event.preventDefault();
-		var data = event.dataTransfer.getData("Text");
-		event.target.appendChild(document.getElementById(data));
-		//document.getElementById("demo").innerHTML = "The p element was dropped";
-	}
-});
+	var nodeCopy = document.getElementById(data).cloneNode(true);
+	nodeCopy.id = "newId";
+	ev.dataTransfer.dropEffect = "copy";
+	ev.target.appendChild(nodeCopy);
+}

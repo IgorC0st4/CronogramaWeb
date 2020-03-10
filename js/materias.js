@@ -4,9 +4,8 @@ $(function(){
 	var tbMaterias;
 	try{
 	tbMaterias	 = localStorage.getItem("tbMaterias");// Recupera os dados armazenados
-
 	}catch(err){
-	alert("Não foi possível acessar o localStorage. Por favor desabilite a opção 'Bloquear cookies de terceiros e site data' para que a aplicação funcione corretamente.");
+		alert("Não foi possível acessar o localStorage. Por favor desabilite a opção 'Bloquear cookies de terceiros e site data' para que a aplicação funcione corretamente.");
 	}
 	tbMaterias = JSON.parse(tbMaterias); // Converte string para objeto
 	if(tbMaterias == null) // Caso não haja conteúdo, iniciamos um vetor vazio
@@ -41,9 +40,9 @@ $(function(){
 		for(var i in tbMaterias){
 			var mat = JSON.parse(tbMaterias[i]);
 
-			$("#materias_cadastradas").append('<li class="collection-item" value="'+i+'"><div ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true">' 
+			$("#materias_cadastradas").append('<li class="collection-item" value="'+i+'"><td id="' + mat.Nome +'" ondragstart="drag(event)" draggable="true">' 
 				+ mat.Nome + 
-				'<a href="#!" class="secondary-content"><i class="material-icons" >delete</i></a></div></li>');
+				'</td></li>');
 		}
 	}
 
