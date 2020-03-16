@@ -38,12 +38,8 @@ $(function(){
 		for(var i in tbMaterias){
 			var mat = JSON.parse(tbMaterias[i]);
 
-			$("#tbl_materias_body").append('<tr>');
-			$("#tbl_materias_body").append('<td value="'+i+'" id="' + mat.Nome +'" ondragstart="drag(event)" draggable="true">' 
-				+ mat.Nome + 
-				'</td>');
-			$("#tbl_materias_body").append('<td value="'+i+'"><a href="#!" class="secondary-content"><i class="material-icons" >delete</i></a></td>');
-			$("#tbl_materias_body").append('</tr>');
+				$("#sortable").append('<li class="collection-item ui-state-default">' 
+				+ mat.Nome +'</li>');
 		}
 	}
 

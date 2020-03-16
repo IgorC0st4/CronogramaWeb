@@ -38,9 +38,9 @@ function Listar(){
 	for (i = 0; i < tbCronograma.nMaterias; i++) {
 		strAppendBody = strAppendBody + "<tr>" ;
 		for(j = 0; j < tbCronograma.nDias; j++){
-			strAppendBody = strAppendBody + "<td><p ondrop='drop(event)' ondragover='allowDrop(event)'>";
+			strAppendBody = strAppendBody + "<td>";
 			strAppendBody = strAppendBody + tbCronograma.dias[j][i];
-			strAppendBody = strAppendBody +"</p></td>";
+			strAppendBody = strAppendBody +"</td>";
 		}
 		strAppendBody = strAppendBody + "</tr>";
 	}
