@@ -31,18 +31,19 @@ $(function(){
 
 		localStorage.setItem("tbMaterias", JSON.stringify(tbMaterias));
 
-		$("#materias_cadastradas").append('<li class="collection-item" value = " ' + 
-			(tbMaterias.length-1) + '"><div>' + nome + '<a href="#!" class="secondary-content"><i class="material-icons">delete</i></a></div></li>');
-		return true;
+		location.reload();
 	}
 
 	function Listar(){
 		for(var i in tbMaterias){
 			var mat = JSON.parse(tbMaterias[i]);
 
-			$("#materias_cadastradas").append('<li class="collection-item" value="'+i+'"><td id="' + mat.Nome +'" ondragstart="drag(event)" draggable="true">' 
+			$("#tbl_materias_body").append('<tr>');
+			$("#tbl_materias_body").append('<td value="'+i+'" id="' + mat.Nome +'" ondragstart="drag(event)" draggable="true">' 
 				+ mat.Nome + 
-				'</td></li>');
+				'</td>');
+			$("#tbl_materias_body").append('<td value="'+i+'"><a href="#!" class="secondary-content"><i class="material-icons" >delete</i></a></td>');
+			$("#tbl_materias_body").append('</tr>');
 		}
 	}
 
@@ -68,7 +69,7 @@ $(function(){
 		return mat;
 	}
 
-	$("#materias_cadastradas").on("click", ".collection-item", function(){
+	$("#tbl_materias_body").on("click", ".secondary-content", function(){
 		indice_selecionado = parseInt($(this).attr("value"));
 		Excluir();
 	});
