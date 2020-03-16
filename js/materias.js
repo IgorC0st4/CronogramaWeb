@@ -38,7 +38,7 @@ $(function(){
 		for(var i in tbMaterias){
 			var mat = JSON.parse(tbMaterias[i]);
 
-				$("#sortable").append('<li class="collection-item ui-state-default">' 
+				$("#materias_sortable").append('<li class="collection-item ui-state-default">' 
 				+ mat.Nome +'</li>');
 		}
 	}

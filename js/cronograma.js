@@ -21,10 +21,9 @@ if(tbCronograma == null){
 
 Listar();
 
-
 function Listar(){
+	console.log(tbCronograma);
 	var i, j;
-
 
 	var strAppendHead = "<tr>";
 	for (i = 0; i < tbCronograma.nDias; i++) {
@@ -44,11 +43,10 @@ function Listar(){
 		}
 		strAppendBody = strAppendBody + "</tr>";
 	}
-	$("#tbl_cronograma_body").append(strAppendBody);
+	$("#tbl_cronograma_body_sortable").append(strAppendBody);
 
 	return;
 }
-
 
 function GerarCronograma(){
 	var numDias = parseInt($("#num_dias").val());
